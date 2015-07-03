@@ -1,0 +1,48 @@
+<!DOCTYPE <html>
+<head lang="en">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+	<title>4GP Auto</title>
+	<link rel="stylesheet" href="bower_components/angular-material/angular-material.min.css"/>
+	<link rel="stylesheet" href="style.css">
+	<!--<link rel="stylesheet" href="//fonts.googleapis.com/css?family=RobotoDraft:400,500,700,400italic" />-->
+</head>
+<body ng-app="4GPApp" ng-controller="MainController" layout="column" layout-align="top center">
+
+	<md-toolbar>
+		<div class="md-toolbar-tools">
+			<span class="md-flex">4GP Auto</span>
+		</div>
+	</md-toolbar>
+
+
+	<div class="bottom-sheet-demo inset" layout="row" layout-sm="column" layout-align="center">
+    	<md-button flex="50" class="md-primary md-raised" ng-click="showListBottomSheet($event)">Administrare Site</md-button>
+    	<md-button flex="50" class="md-primary md-raised" ng-click="showGridBottomSheet($event)">Vizualizare comenzi</md-button>
+  	</div>
+
+  	<script type="text/ng-template" id="bottom-sheet-grid-template.html">
+	  	<md-bottom-sheet class="md-grid">
+		  <md-list>
+		    <md-list-item ng-repeat="item in items">
+
+		      <md-button class="md-grid-item-content" ng-click="listItemClick($index)">
+		        <md-icon md-svg-src="{{item.icon}}"></md-icon>
+		        <div class="md-grid-text"> {{ item.name }} </div>
+		      </md-button>
+
+		    </md-list-item>
+		  </md-list>
+		</md-bottom-sheet>
+	</script>
+
+	<script src="bower_components/angular/angular.min.js"></script>
+	<script src="bower_components/angular-aria/angular-aria.min.js"></script>
+	<script src="bower_components/angular-animate/angular-animate.min.js"></script>
+	<script src="bower_components/hammerjs/hammer.min.js"></script>
+	<script src="bower_components/angular-material/angular-material.min.js"></script>
+	<script src="bower_components/angular-material-icons/angular-material-icons.min.js"></script>
+	
+	<script src="app.js"></script>
+</body>
+</html>
